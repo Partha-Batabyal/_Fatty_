@@ -7,7 +7,25 @@
 body {
   width: 100%;
   height: 100%;
+    transition: background-color 0.5s ease-in-out;
   background-color: #1a1a1a !important;
+}
+:root{
+
+  --bg_blue:#415a77;
+  --bg_left_color:#1c2536;
+  --bg_right_section:#0d1b2a;
+  --section_page_color:rgba(246, 246, 246, 0.058);
+  --left_size_change_color:#778da9;
+  --bar_color:#fff;
+}
+.mycolor{
+  --bg_blue:blue;
+  --bg_left_color:#ff1414;
+  --bg_right_section:#16ff05;
+  --left_size_change_color:#000000;
+  --bar_color:#fff;
+
 }
 .wrapper_main_body {
   width: 100%;
@@ -18,9 +36,11 @@ body {
   position: fixed;
   width: 20%;
   height: 100vh;
-  background-color:#1c2536;
+  background-color:var(--bg_left_color);
   overflow: hidden;
-  transition: all 0.5s ease-in-out;
+
+  transition: all 0.1s ease-in-out;
+   transition: background-color 0.5s ease-in-out;
 }
 .wrapper_main_body > #left > .left_main_page {
   width: 100%;
@@ -35,6 +55,7 @@ body {
 .wrapper_main_body > #left > .left_main_page > div {
   width: 100%;
   height: 33.34%;
+   transition: background-color 0.5s ease-in-out;
   /* background-color: aqua; */
 }
 
@@ -54,12 +75,13 @@ body {
 .box1_Txt {
   width: 70%;
   height: 70%;
-  background-color: #415a77;
+  background-color: var(--bg_blue);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+   transition: background-color 0.5s ease-in-out;
 }
 .box1_Txt > p {
   font-size: 48px;
@@ -73,7 +95,7 @@ body {
 .box3_color{
  width: 70%;
   height: 70%;
-  background-color: #415a77;
+  background-color: var(--bg_blue);
   border-radius: 8px;
   overflow: hidden;
   display: flex;
@@ -91,7 +113,7 @@ body {
 .left_box_2 > .list {
   width: 70%;
   height: 90%;
-  background-color: #415a77;
+  background-color: var(--bg_blue);
   border-radius: 14px;
 }
 .left_box_2 > .list > ul {
@@ -127,8 +149,8 @@ body {
   margin-left: 20%;
   width: 80%;
   height: 100%;
-  background-color: #0d1b2a;
-  transition: all 0.5s ease-in-out;
+  background-color: #0525459e;
+  transition: all 0.1s ease-in-out;
 }
 #right > .right_main_page {
   width: 100%;
@@ -146,12 +168,13 @@ body {
   justify-content: center;
   align-items: center;
   padding: 8px 0px 8px 0px;
-  background-color: #0d1b2a;
+  background-color: var(--bg_right_section);
+   transition: background-color 0.5s ease-in-out;
 }
 #right > .right_main_page > section > .page {
   width: 98%;
   height: 100%;
-  background-color: rgba(246, 246, 246, 0.058);
+  background-color: var(--section_page_color);
 }
 
 
@@ -169,7 +192,9 @@ body {
 
   margin-left: -1.3%;
   margin-top: 2%;
-  background-color: #778da9;
+  background-color: var(--left_size_change_color);
+  transition: all 0.1s ease-in-out;
+   transition: background-color 0.5s ease-in-out;
 }
 #checkbox {
   display: none;
@@ -190,7 +215,7 @@ body {
   right: 0;
   height: 2.5px;
   border-radius: calc(4px / 2);
-  background: #ffffff;
+  background: var(--bar_color);
   color: inherit;
   opacity: 1;
   transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
