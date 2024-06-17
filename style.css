@@ -21,6 +21,8 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 :root {
+  --without_focus_border_color: rgb(47, 78, 121);
+  --focus_border_color: rgb(18, 46, 82);
   /* ***left_main_txt_color */
   --a_text_main_color_left: #000000;
   /* ***left_autoTxt_color */
@@ -47,6 +49,8 @@ body {
   --hover_active_background_color: #0d1b2aca;
 }
 .mycolor {
+  --without_focus_border_color: rgb(55, 116, 91);
+  --focus_border_color: rgb(32, 58, 4);
   /* ***left_main_txt_color */
   --a_text_main_color_left: #d7cece;
   /* ***left_autoTxt_color */
@@ -71,6 +75,7 @@ body {
   --hover_active_border_color: rgb(10, 174, 133);
   --hover_active_background_color: #061c3388;
   --hover_active_text_color: #acfde6;
+  transition: all 0.5s ease-in-out;
 }
 .wrapper_main_body {
   width: 100%;
@@ -117,6 +122,7 @@ body {
 
 .left_box_1 {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   /* gap: 10px; */
@@ -129,13 +135,40 @@ body {
   border-radius: 8px;
   overflow: hidden;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
+
   transition: background-color 0.5s ease-in-out;
 }
 .box1_Txt > p {
   font-size: 48px;
   color: var(--left_autoTxt_color);
+  overflow: hidden;
+}
+
+.input_box_left {
+  width: 90%;
+  height: 60%;
+  background: transparent;
+  border: 3px solid var(--without_focus_border_color);
+  border-radius: 8px;
+  padding: 9px;
+  font-size: 24px;
+  color: var(--left_autoTxt_color);
+  overflow-x: hidden;
+
+  outline: none;
+}
+.input_box_left::placeholder {
+  font-size: 20px;
+}
+.name_go {
+  cursor: pointer;
+}
+
+.input_box_left:focus {
+  border: 3px solid var(--focus_border_color);
 }
 .left_box_3 {
   display: flex;
@@ -358,4 +391,10 @@ body {
   border: 3px solid var(--hover_active_border_color);
   color: var(--hover_active_text_color);
   background-color: var(--hover_active_background_color);
+
+  transition: all 0.1s linear;
+}
+.left_a:hover {
+  border: 3px solid var(--hover_active_border_color);
+  transition: all 0.1s linear;
 }

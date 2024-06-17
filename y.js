@@ -1,34 +1,16 @@
 let y = [`<i class="fa-solid fa-magnifying-glass name_go"></i>`];
-let x = [
-  "Hey",
-  "Human",
-  "It's",
-  "Your",
-  "Brain",
-  "How",
-  "Are",
-  "You?",
-  "Please",
-  "Enter",
-  "Your",
-  "Name",
-  ...y,
-];
-
 let typed;
-
 let typed1 = () => {
   typed?.destroy();
 
   typed = new Typed(".typing_left", {
-    strings: [...x],
+    strings: [...x, ...y],
     typeSpeed: 150,
     backSpeed: 15,
     loop: true,
     showCursor: false,
   });
 };
-
 document.querySelector(".typing_left").addEventListener("click", (event) => {
   if (event.target.classList.contains("name_go")) {
     typed.destroy();
