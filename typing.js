@@ -1,5 +1,6 @@
 let y = [`<i class="fa-solid fa-magnifying-glass name_go"></i>`];
 let x = [
+  
   "Hey",
   "Human",
   "It's",
@@ -50,7 +51,7 @@ document.querySelector(".typing_left").addEventListener("click", (event) => {
         x = ["hii", ...name, "thank", "you", "for", "your", "time"];
         y = [];
         typed1();
-        document.querySelector(".line").style.display = "inline-block";
+        document.querySelector(".line").style.display = "inline";
       }
     });
   }

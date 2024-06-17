@@ -142,6 +142,7 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 .box1_Txt > p {
+
   font-size: 48px;
   color: var(--left_autoTxt_color);
   overflow: hidden;
@@ -163,6 +164,7 @@ body {
 .input_box_left::placeholder {
   font-size: 20px;
 }
+
 .name_go {
   cursor: pointer;
 }
