@@ -1,6 +1,5 @@
 let y = [`<i class="fa-solid fa-magnifying-glass name_go"></i>`];
 let x = [
-  
   "Hey",
   "Human",
   "It's",

@@ -21,6 +21,9 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 :root {
+  /**** border_color_project */
+  --project_all_border_color: red;
+  /* ***input */
   --without_focus_border_color: rgb(47, 78, 121);
   --focus_border_color: rgb(18, 46, 82);
   /* ***left_main_txt_color */
@@ -49,6 +52,9 @@ body {
   --hover_active_background_color: #0d1b2aca;
 }
 .mycolor {
+  /**** border_color_project */
+  --project_all_border_color: rgb(0, 238, 255);
+  /* ***input */
   --without_focus_border_color: rgb(55, 116, 91);
   --focus_border_color: rgb(32, 58, 4);
   /* ***left_main_txt_color */
@@ -142,7 +148,6 @@ body {
   transition: background-color 0.5s ease-in-out;
 }
 .box1_Txt > p {
-
   font-size: 48px;
   color: var(--left_autoTxt_color);
   overflow: hidden;
@@ -260,10 +265,25 @@ body {
   border-radius: 8px;
 }
 #right > .right_main_page > section > .page {
-  width: 98%;
+  width: 100%;
   height: 100%;
   background-color: var(--section_page_color);
   border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project_all {
+  width: 89%;
+  height: 80%;
+  /* background-color: pink; */
+  border-radius: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 9px solid var(--project_all_border_color);
+  border-left: 9px solid var(--project_all_border_color);
 }
 
 /***change_left_page */
