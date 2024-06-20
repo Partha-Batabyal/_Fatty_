@@ -25,6 +25,8 @@ let typed1 = () => {
     typeSpeed: 150,
     backSpeed: 15,
     loop: true,
+    cursorChar: "",
+    smartBackspace: true,
     showCursor: false,
   });
 };
@@ -49,7 +51,9 @@ document.querySelector(".typing_left").addEventListener("click", (event) => {
 
         x = ["hii", ...name, "thank", "you", "for", "your", "time"];
         y = [];
+
         typed1();
+
         document.querySelector(".line").style.display = "inline";
       }
     });

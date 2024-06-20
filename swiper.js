@@ -78,6 +78,7 @@ const initSwiperTooltips = () => {
       const loader = document.createElement("div");
       loader.classList.add("loaderSwiper");
       loader.classList.add("loader");
+
       slide.appendChild(loader);
 
       setTimeout(() => {
