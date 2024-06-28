@@ -420,3 +420,47 @@ body {
   border: 3px solid var(--hover_active_border_color);
   transition: all 0.1s linear;
 }
+
+/* Default theme */
+.Default-Theme #left {
+  width: 0;
+}
+
+.Default-Theme #right {
+  margin-left: 0;
+  width: 100%;
+}
+
+.Default-Theme .change {
+  margin-left: 4%;
+}
+
+.Default-Theme .Input_Box_Left {
+  display: none; /* Assuming removal */
+}
+
+.Default-Theme .line {
+  display: inline-block;
+}
+
+/* Alternative theme */
+.Alternative-Theme #left {
+  width: 20%;
+}
+
+.Alternative-Theme #right {
+  margin-left: 20%;
+  width: 80%;
+}
+
+.Alternative-Theme .change {
+  margin-left: -1.3%;
+}
+
+.Alternative-Theme .Input_Box_Left {
+  display: block; /* Assuming adding */
+}
+
+.Alternative-Theme .line {
+  display: inline-block;
+}

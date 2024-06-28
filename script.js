@@ -1,74 +1,89 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let take = (e) => document.querySelector(e);
+  const take = (e) => document.querySelector(e);
 
-  let change_theme = take(".change > input");
-  let change = take(".change");
-  let left = take("#left");
-  let right = take("#right");
-  let color_toggler = take(".box3_color>.container>.toggle>input");
-  let left_a_all = document.querySelectorAll(".left_a");
+  const changeTheme = take(".change > input");
+  const change = take(".change");
+  const left = take("#left");
+  const right = take("#right");
+  const colorToggler = take(".box3_color>.container>.toggle>input");
+  const leftLinks = document.querySelectorAll(".left_a");
 
-  change_theme.checked = false;
-  left.style.width = "0";
-  right.style.marginLeft = "0";
-  right.style.width = "100%";
-  change.style.marginLeft = "4%";
+  // * Initial settings
+  changeTheme.checked = false;
+  document.body.classList.add("Default-Theme");
 
-  change_theme.addEventListener("change", () => {
-    if (change_theme.checked === false) {
-      left.style.width = "0";
-      right.style.marginLeft = "0";
-      right.style.width = "100%";
-      change.style.marginLeft = "4%";
-      take(".input_box_left").remove();
-      document.querySelector(".line").style.display = "inline-block";
+  // * Theme change event listener
+  changeTheme.addEventListener("change", () => {
+    if (!changeTheme.checked) {
+      // * Change theme to default
+      document.body.classList.remove("Alternative-Theme");
+      document.body.classList.add("Default-Theme");
+      take(".Input_Box_Left")?.remove();
       typed.reset();
       typed.stop();
     } else {
-      left.style.width = "20%";
-      right.style.marginLeft = "20%";
-      right.style.width = "80%";
-      change.style.marginLeft = "-1.3%";
+      // * Change theme to alternative
+      document.body.classList.remove("Default-Theme");
+      document.body.classList.add("Alternative-Theme");
       typed1();
     }
   });
 
-  color_toggler.addEventListener("change", () => {
-    if (color_toggler.checked == false) {
-      document.body.classList.toggle("mycolor");
-    } else {
-      document.body.classList.toggle("mycolor");
-    }
+  // * Color toggler event listener
+  colorToggler.addEventListener("change", () => {
+    document.body.classList.toggle("mycolor");
+    saveColorInBrowser();
   });
 
-  left_a_all.forEach((e) => {
-    e.addEventListener("click", () => {
-      left_a_all.forEach((item) => {
+  // * Save color in local storage
+  const saveColorInBrowser = () => {
+    const color = document.body.classList.contains("mycolor")
+      ? ["mycolor"]
+      : [];
+    localStorage.setItem("color", JSON.stringify(color));
+  };
+
+  // * Load color from local storage
+  const loadColorInBrowser = () => {
+    const color = JSON.parse(localStorage.getItem("color"));
+    if (color && color.includes("mycolor")) {
+      document.body.classList.add("mycolor");
+      colorToggler.checked = true;
+    } else {
+      colorToggler.checked = false;
+    }
+  };
+
+  // * Load the saved color on page load
+  loadColorInBrowser();
+
+  // * Left links click event listener
+  leftLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      leftLinks.forEach((item) => {
         item.classList.remove("hover_active");
       });
-      e.classList.toggle("hover_active");
+      link.classList.toggle("hover_active");
     });
   });
-  let page = document.querySelectorAll(".page");
+
+  // * Scroll event listener
+  const pages = document.querySelectorAll(".page");
 
   window.addEventListener("scroll", () => {
-    let top = window.scrollY;
-    page.forEach((e) => {
-      let offset = e.offsetTop;
-      let height = e.offsetHeight;
+    const top = window.scrollY;
+    pages.forEach((page) => {
+      const offset = page.offsetTop;
+      const height = page.offsetHeight;
+      const id = page.getAttribute("id");
 
-      let id = e.getAttribute("id");
       if (top >= offset - 37 && top < offset + height - 37) {
-        left_a_all.forEach((item) => {
+        leftLinks.forEach((item) => {
           item.classList.remove("hover_active");
         });
         document.querySelector(`[href="#${id}"]`).classList.add("hover_active");
-        console.log(`now you are in${id} page`);
+        console.log(`Now you are on the ${id} page`);
       }
     });
   });
-
-  // document.addEventListener("contextmenu", (e) => {
-  //   e.preventDefault();
-  // });
 });

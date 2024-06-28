@@ -72,7 +72,7 @@ const initSwiperTooltips = () => {
   swiperSlides.forEach((slide, index) => {
     slide.setAttribute("data-tooltip", tooltips[index]);
 
-    slide.addEventListener("click", () => {
+    slide.addEventListener("click"||"touchstart"||"ontouchstart", () => {
       slide.removeAttribute("data-tooltip");
 
       const loader = document.createElement("div");
@@ -80,6 +80,8 @@ const initSwiperTooltips = () => {
       loader.classList.add("loader");
 
       slide.appendChild(loader);
+
+
 
       setTimeout(() => {
         loader.remove();

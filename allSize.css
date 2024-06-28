@@ -1,0 +1,10 @@
+@media screen and (max-width: 600px) {
+  .Alternative-Theme #left {
+    width: 50%;
+  }
+
+  .Alternative-Theme #right {
+    margin-left: 50%;
+    width: 50%;
+  }
+}
