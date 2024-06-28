@@ -144,13 +144,17 @@ body {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-
+padding: 2px;
   transition: background-color 0.5s ease-in-out;
 }
 .box1_Txt > p {
   font-size: 48px;
   color: var(--left_autoTxt_color);
   overflow: hidden;
+  /* height: 70%; */
+  text-wrap: nowrap;
+
+
 }
 
 .input_box_left {
